@@ -3,8 +3,11 @@
 echo -e "\n\n You should not be configuring multiple proxies per namespace"
 echo -e "\n The only prerequistes to installing are \n\t 1. Public facing ipv4 \n\t 2. DNS record pointing a domain name to that ip \n \n "
 
-read -p "Do you want to proceed? (Y/N) " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
+read -p "Do you want to proceed? ( y/n ) " -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then 
+  exit 1 
+fi
 echo -e "\n\tCool. \n"
 
 # Create & Register a new SSL certificate
