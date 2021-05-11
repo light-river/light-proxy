@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo nano /etc/apache2/sites-available/Apache2Proxy.conf
+sudo systemctl restart apache2.service
