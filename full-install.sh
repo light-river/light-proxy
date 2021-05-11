@@ -45,8 +45,8 @@ sudo cp ./template-configs/default.cfg /etc/apache2/sites-available/Apache2Proxy
 sudo a2ensite Apache2Proxy.conf 
 sudo systemctl restart apache2.service
 
-ln -s ./links/edit-proxy ~/edit-proxy
-chown "$USER" ./links/edit-proxy && chmod +x ~/edit-proxy
+ln -s "$(pwd)/links/edit-proxy" ~/edit-proxy
+chmod +x ~/edit-proxy
 
 echo -e "\nCool, you can run ~/edit-proxy to change the configuration and restart the proxy with one command now"
 echo -e "Go there and replace the example.com domain with your own"
