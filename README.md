@@ -9,7 +9,7 @@
 ## Installation
 You should install at-most one reverse proxy per userspace
 ```
-$(cd && git clone git@github.com:light-river/light-proxy.git && cd light-proxy && ./full-install.sh)
+cd && $(git clone git@github.com:light-river/light-proxy.git && cd light-proxy && ./full-install.sh)
 ```
 
 ## Making changes to your proxy
