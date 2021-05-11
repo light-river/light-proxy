@@ -44,7 +44,7 @@ sudo a2ensite Apache2Proxy.conf
 sudo systemctl restart apache2.service
 
 # Create symlink for the `edit-proxy` cmd
-chmod +x ~/edit-proxy
+sudo rm -rf /usr/bin/edit-proxy
 sudo ln -s "$(pwd)/links/edit-proxy" /usr/bin/edit-proxy
 
 echo -e "\n\n"
