@@ -48,5 +48,5 @@ chmod +x ~/edit-proxy
 sudo ln -s "$(pwd)/links/edit-proxy" /usr/bin/edit-proxy
 
 echo -e "\n\n"
-echo -e "\n\tCool, you can run: \n\t\t edit-proxy \n\t from any location to edit your proxy\n"
-echo -e "\n\tYou should run that command now, fresh installs require minor configuration changes"
+echo -e "\n\tCool, you can now run: \n\n\t\t edit-proxy\n\n\n"
+echo -e "\n\tYou should run that command now & replace "example.com" with your domain-name"
