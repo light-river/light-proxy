@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "This configures the root namespace... you shouldn't run this multiple times"
-echo -e "The only prerequistes to installing are \n\t 1. Public facing ipv4 \n\t 2. DNS record pointing a domain name to that ip"
+echo -e "The only prerequistes to installing are \n\t 1. Public facing ipv4 \n\t 2. DNS record pointing a domain name to that ip \n \n "
 
 read -p "Do you want to proceed? " -n 1 -r
 echo    # (optional) move to a new line
@@ -9,8 +9,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
 	    exit 1
 fi
-echo -e "Cool. "
-
+echo -e "\n\tCool. \n"
 
 #Add SSL certificates
 sudo snap install core; sudo snap refresh core
@@ -45,10 +44,8 @@ sudo cp ./template-configs/default.cfg /etc/apache2/sites-available/Apache2Proxy
 sudo a2ensite Apache2Proxy.conf 
 sudo systemctl restart apache2.service
 
-ln -s "$(pwd)/links/edit-proxy" ~/edit-proxy
 chmod +x ~/edit-proxy
-
-echo -e "\nCool, you can run ~/edit-proxy to change the configuration and restart the proxy with one command now"
-echo -e "Go there and replace the example.com domain with your own"
-
-
+sudo ln -s "$(pwd)/links/edit-proxy" /usr/bin/edit-proxy
+echo -e "\n\n"
+echo -e "\n\tCool, you can run: \n\t\t edit-proxy \n\t from any location to edit your proxy\n"
+echo -e "\n\tYou should run that command now, fresh installs require minor configuration changes"
