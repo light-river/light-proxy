@@ -5,24 +5,13 @@
 
 &emsp;&emsp;&emsp;&emsp;Creates `edit-proxy`, a userspace command for quickly changing your proxy as your working.
 
-
-## Installation
-You should install at-most one reverse proxy per userspace
+## Install
 ```
 curl -sL https://github.com/light-river/light-proxy/archive/refs/tags/prod/v0.x.tar.gz | tar zx && cd light-proxy-prod-v0.x && ./full-install.sh
-```
 
-## Making changes to your proxy
-The `edit-proxy` command is now available throuhgout your users namespace.
-Changes made this way will automatically restart your Apache2 daemon
+```
+## Edit the proxy
 ```
 edit-proxy
 ```
 - - -
-
-## Host Requirements
-
-- Debian/Ubuntu host with a public `ipv4` address.
-- Domain name with an `A record` pointing at your public `ipv4` address. 
-- Application that you want to proxy requests to. (This could a docker container, fileserver, or entierly other host.)
-
