@@ -10,7 +10,6 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 fi
 echo -e "\n\tCool. \n"
 
-
 # Install light-ca
 curl -sL https://github.com/light-river/light-ca/releases/download/latest/light-ca.tar.gz | tar zx && sudo mv ./light-ca /usr/bin/light-ca
 light-ca --domains 'proxy.localhost' 

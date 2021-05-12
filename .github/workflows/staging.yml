@@ -15,6 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Test full-install
+        run: |
+          sudo ./full-install.sh
+
       - name: Create release
         run: |
           cd ..
