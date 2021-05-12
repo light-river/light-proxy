@@ -1,4 +1,4 @@
-name: Production
+name: Staging
 
 on: 
   push:
@@ -8,17 +8,20 @@ on:
     types: [ assigned, opened, synchronize, reopened ]
 
 jobs:
-  default:
+  production-build:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Test full-install
+        run: |
+          sudo ./full-install.sh
 
       - name: Create release
         run: |
           cd ..
-          sudo tar -czvf $GITHUB_WORKSPACE.tar.gz $GITHUB_WORKSPACE/
+          sudo tar -czvf light-proxy.tar.gz light-proxy/
 
       - name: Release latest
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -27,4 +30,4 @@ jobs:
           prerelease: false
           automatic_release_tag: prod/v0.x
           files: |
-            $GITHUB_WORKSPACE.tar.gz
+            ../light-proxy.tar.gz

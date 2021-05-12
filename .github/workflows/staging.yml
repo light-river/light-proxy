@@ -8,7 +8,7 @@ on:
     types: [ assigned, opened, synchronize, reopened ]
 
 jobs:
-  default:
+  staging-build:
     runs-on: ubuntu-latest
     steps:
     
@@ -22,8 +22,7 @@ jobs:
       - name: Create release
         run: |
           cd ..
-          sudo tar -czvf $GITHUB_WORKSPACE.tar.gz $GITHUB_WORKSPACE/
-
+          sudo tar -czvf light-proxy.tar.gz light-proxy/
       - name: Release latest
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -31,4 +30,4 @@ jobs:
           prerelease: true
           automatic_release_tag: staged/v0.x
           files: |
-            $GITHUB_WORKSPACE.tar.gz
+            ../light-proxy.tar.gz
