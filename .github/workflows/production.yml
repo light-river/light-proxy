@@ -1,0 +1,30 @@
+name: Production
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types: [ assigned, opened, synchronize, reopened ]
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create release
+        run: |
+          cd ..
+          sudo tar -czvf $GITHUB_WORKSPACE.tar.gz $GITHUB_WORKSPACE/
+
+      - name: Release latest
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: prod/v0.x
+          files: |
+            $GITHUB_WORKSPACE.tar.gz
