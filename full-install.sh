@@ -14,7 +14,7 @@ sudo light-ca --domains "*.$host_name"
 
 # Move certs
 sudo mkdir -p $cert_root_path
-sudo mv "./$host_name/*" "$cert_root_path"
+sudo mv "$host_name/*" "$cert_root_path"
 echo "certs installed at $cert_root_path"
 
 # Install Apache2
