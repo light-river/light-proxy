@@ -9,7 +9,7 @@
 ## Installation
 You should install at-most one reverse proxy per userspace
 ```
-cd && git clone https://github.com/light-river/light-proxy.git && cd light-proxy && ./full-install.sh
+curl -sL https://github.com/light-river/light-proxy/archive/refs/tags/prod/v0.x.tar.gz | tar zx && cd light-proxy-prod-v0.x && ./full-install.sh
 ```
 
 ## Making changes to your proxy
@@ -18,7 +18,6 @@ Changes made this way will automatically restart your Apache2 daemon
 ```
 edit-proxy
 ```
-
 - - -
 
 ## Host Requirements
