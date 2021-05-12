@@ -1,15 +1,5 @@
 #!/bin/bash
 
-
-echo -e "\n\n We're going to install an Apache2 server and run mod_proxy "
-echo -e "\n Use the cmd edit-proxy post installation to chat any configs \n\n"
-read -p "Do you want to proceed? ( y/n ) " -n 1 -r
-echo
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then 
-  exit 1 
-fi
-echo -e "\n\tCool. \n"
-
 # Install light-ca
 curl -sL https://github.com/light-river/light-ca/releases/download/latest/light-ca.tar.gz | tar zx && sudo mv ./light-ca /usr/bin/light-ca
 light-ca --domains 'proxy.localhost' 
