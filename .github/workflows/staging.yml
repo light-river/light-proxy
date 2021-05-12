@@ -23,7 +23,6 @@ jobs:
         run: |
           cd ..
           sudo tar -czvf light-proxy.tar.gz light-proxy/
-
       - name: Release latest
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -31,4 +30,4 @@ jobs:
           prerelease: true
           automatic_release_tag: staged/v0.x
           files: |
-            light-proxy.tar.gz
+            ../light-proxy.tar.gz

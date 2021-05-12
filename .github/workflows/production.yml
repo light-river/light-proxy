@@ -30,4 +30,4 @@ jobs:
           prerelease: false
           automatic_release_tag: prod/v0.x
           files: |
-            light-proxy.tar.gz
+            ../light-proxy.tar.gz
