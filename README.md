@@ -14,4 +14,3 @@ curl -sL https://github.com/light-river/light-proxy/archive/refs/tags/prod/v0.x.
 ```
 edit-proxy
 ```
-- - -
